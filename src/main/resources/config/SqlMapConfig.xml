@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="spring.pickMe.domain.MemberVO" alias="member"/>
+		<typeAlias type="spring.pickMe.domain.FollowVO" alias="follow"/>
+		<typeAlias type="spring.pickMe.domain.MessageVO" alias="message"/>
+		<typeAlias type="spring.pickMe.domain.PostCommentVO" alias="postComment"/>
+		<typeAlias type="spring.pickMe.domain.PostLikeVO" alias="postLike"/>
+		<typeAlias type="spring.pickMe.domain.PostVO" alias="post"/>
+		<typeAlias type="spring.pickMe.domain.UrlVO" alias="url"/>
+		<typeAlias type="spring.pickMe.domain.util.FieldVO" alias="field"/>
+		<typeAlias type="spring.pickMe.domain.util.PostLogVO" alias="postLog"/>
+		<typeAlias type="spring.pickMe.domain.util.RecruitVO" alias="recruit"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
+				<property name="username" value="pickme"/>
+				<property name="password" value="0000"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="sql/member.xml"/>
+		<mapper resource="sql/follow.xml"/>
+		<mapper resource="sql/message.xml"/>
+		<mapper resource="sql/postComment.xml"/>
+		<mapper resource="sql/postLike.xml"/>
+		<mapper resource="sql/post.xml"/>
+		<mapper resource="sql/url.xml"/>
+		<mapper resource="sql/field.xml"/>
+		<mapper resource="sql/postLog.xml"/>
+		<mapper resource="sql/recruit.xml"/>
+	</mappers>
+</configuration>
